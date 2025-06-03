@@ -1,0 +1,16 @@
+{
+    "business_name": "Shiva Enterprises",
+    "contact_info": {
+        "mobile_number": "+91-9876543210",
+        "email": "contact@shivaenterprises.com",
+        "address": "123, Main Market, Sector 45, New Delhi, India - 110001"
+    },
+    "social_media": {
+        "instagram": "https://instagram.com/shivaenterprises",
+        "facebook": "https://facebook.com/shivaenterprises",
+        "whatsapp": "https://wa.me/919876543210"
+    },
+    "about": {
+        "description": "Shiva Enterprises is a leading provider of quality products and services to the automotive industry. With a commitment to excellence, we strive to meet the needs of our customers and exceed their expectations."
+    }
+}

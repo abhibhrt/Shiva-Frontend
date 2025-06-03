@@ -1,0 +1,24 @@
+.shiva-language-toggle {
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  .shiva-language-button {
+    background: none;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  
+  .shiva-language-button:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+  
+  .shiva-language-button.active {
+    background: #f39c12;
+    border-color: #f39c12;
+    font-weight: bold;
+  }

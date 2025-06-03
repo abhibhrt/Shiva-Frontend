@@ -1,0 +1,120 @@
+/* Footer.css */
+
+.shiva-footer {
+  background-color: #121212;
+  color: #e0e0e0;
+  padding: 3rem 0 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.shiva-footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.shiva-footer-section {
+  margin-bottom: 2rem;
+}
+
+.shiva-footer-section h3 {
+  color: #ffffff;
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.shiva-footer-section h3::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 50px;
+  height: 2px;
+  background: linear-gradient(90deg, #9c27b0, #673ab7);
+}
+
+.shiva-footer-section p {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  color: #b0b0b0;
+}
+
+.shiva-footer-links {
+  list-style: none;
+  padding: 0;
+}
+
+.shiva-footer-links li {
+  margin-bottom: 0.8rem;
+}
+
+.shiva-footer-links a {
+  color: #b0b0b0;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-block;
+  position: relative;
+}
+
+.shiva-footer-links a:hover {
+  color: #ffffff;
+  transform: translateX(5px);
+}
+
+.shiva-footer-links a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 1px;
+  bottom: -2px;
+  left: 0;
+  background-color: #9c27b0;
+  transition: width 0.3s ease;
+}
+
+.shiva-footer-links a:hover::after {
+  width: 100%;
+}
+
+address p {
+  margin-bottom: 0.8rem;
+  font-style: normal;
+  color: #b0b0b0;
+  line-height: 1.6;
+}
+
+.shiva-footer-bottom {
+  background-color: #000000;
+  padding: 1.5rem 0;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.shiva-footer-bottom p {
+  margin: 0;
+  color: #757575;
+  font-size: 0.9rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .shiva-footer-container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 0 1.5rem;
+  }
+  
+  .shiva-footer-section {
+    margin-bottom: 1.5rem;
+  }
+  
+  .shiva-footer-section h3 {
+    margin-bottom: 1rem;
+  }
+}

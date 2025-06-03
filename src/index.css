@@ -1,0 +1,32 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: black;
+}
+html{
+  scroll-behavior: smooth;
+}
+:root{
+  --primary-color: #1e3c72;
+  --secondary-color: #2a5298;
+  --tertiary-color: #1e726a;
+  --quaternary-color: #2a5298;
+  --quinary-color: #1e3c72;
+  --senary-color: #2a5298;
+  --septenary-color: #1e3c72;
+  --octonary-color: #2a5298;
+  --nonary-color: #1e3c72;
+  --denary-color: #2a5298;
+}
+.shiva-enterprises-app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.shiva-enterprises-main {
+  flex: 1;
+  padding: 0;
+  margin: 0;
+}

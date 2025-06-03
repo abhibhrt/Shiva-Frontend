@@ -1,0 +1,290 @@
+/* Navbar.css */
+:root {
+  --accent-color: #f9d423;
+  --text-color: #ffffff;
+  --menu-bg: rgba(30, 60, 114, 0.98);
+}
+
+/* Base Styles */
+.shiva-navbar {
+  background: transparent;
+  color: var(--text-color);
+  padding: 1rem 2rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  transition: all 0.5s ease;
+}
+
+.shiva-navbar.scrolled {
+  background: linear-gradient(to right, var(--primary-color), var(--tertiary-color));
+  padding: .5rem 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.shiva-navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo Styles */
+.shiva-navbar-logo a {
+  color: white;
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-decoration: none;
+  background: linear-gradient(to right, #fff, var(--accent-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.shiva-navbar.scrolled .shiva-navbar-logo a {
+  font-size: 1.6rem;
+}
+
+/* Navigation Links */
+.shiva-navbar-links {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+}
+
+.nav-item {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: all 0.5s ease;
+}
+
+.shiva-navbar.loaded .nav-item {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.shiva-navbar.loaded .nav-item:nth-child(1) { transition-delay: 0.1s; }
+.shiva-navbar.loaded .nav-item:nth-child(2) { transition-delay: 0.2s; }
+.shiva-navbar.loaded .nav-item:nth-child(3) { transition-delay: 0.3s; }
+.shiva-navbar.loaded .nav-item:nth-child(4) { transition-delay: 0.4s; }
+.shiva-navbar.loaded .nav-item:nth-child(5) { transition-delay: 0.5s; }
+
+.shiva-nav-link {
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.shiva-nav-link:hover {
+  color: var(--accent-color);
+}
+
+.shiva-nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--accent-color);
+  transition: width 0.3s ease;
+}
+
+.shiva-nav-link:hover::after {
+  width: 100%;
+}
+
+a.active{
+  color: var(--accent-color);
+}
+/* Mobile Navigation Icon */
+.shiva-navbar-mobile-icon {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--text-color);
+  transition: all 0.3s ease;
+  z-index: 1001;
+  padding: 0.5rem;
+}
+
+.shiva-navbar-mobile-icon:hover {
+  color: var(--accent-color);
+  transform: scale(1.1);
+}
+
+/* Mobile Menu Wrapper */
+.shiva-mobile-menu-wrapper {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  height: 100vh;
+  background: var(--menu-bg);
+  z-index: 999;
+  transition: right 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+.shiva-mobile-menu-wrapper.active {
+  right: 0;
+}
+
+.shiva-mobile-menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.shiva-mobile-menu-close {
+  font-size: 1.5rem;
+  color: var(--text-color);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.shiva-mobile-menu-close:hover {
+  color: var(--accent-color);
+  transform: rotate(90deg);
+}
+
+/* Mobile Navigation Menu */
+.shiva-navbar-mobile-menu {
+  list-style: none;
+  padding: 80px 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  flex: 1;
+}
+
+.shiva-navbar-mobile-menu li {
+  opacity: 0;
+  transform: translateX(30px);
+  transition: all 0.4s ease;
+}
+
+.shiva-mobile-menu-wrapper.active .shiva-navbar-mobile-menu li {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.shiva-mobile-menu-wrapper.active .shiva-navbar-mobile-menu li:nth-child(1) { transition-delay: 0.2s; }
+.shiva-mobile-menu-wrapper.active .shiva-navbar-mobile-menu li:nth-child(2) { transition-delay: 0.3s; }
+.shiva-mobile-menu-wrapper.active .shiva-navbar-mobile-menu li:nth-child(3) { transition-delay: 0.4s; }
+.shiva-mobile-menu-wrapper.active .shiva-navbar-mobile-menu li:nth-child(4) { transition-delay: 0.5s; }
+.shiva-mobile-menu-wrapper.active .shiva-navbar-mobile-menu li:nth-child(5) { transition-delay: 0.6s; }
+
+.shiva-navbar-mobile-menu .shiva-nav-link {
+  font-size: 1.4rem;
+  padding: 1rem;
+  display: block;
+  width: 100%;
+  border-radius: 8px;
+  transition: all 0.4s ease;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.shiva-navbar-mobile-menu .shiva-nav-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.6s ease;
+}
+
+.shiva-navbar-mobile-menu .shiva-nav-link:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateX(10px);
+  color: var(--accent-color);
+}
+
+.shiva-navbar-mobile-menu .shiva-nav-link:hover::before {
+  left: 100%;
+}
+
+/* Overlay for mobile menu */
+.mobile-menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 998;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.mobile-menu-overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .shiva-navbar-links {
+    display: none;
+  }
+  
+  .shiva-navbar-mobile-icon {
+    display: block;
+  }
+
+  .shiva-navbar-logo a {
+    font-size: 1.5rem;
+  }
+
+  .shiva-navbar.scrolled .shiva-navbar-logo a {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .shiva-navbar {
+    padding: 1rem;
+  }
+
+  .shiva-navbar.scrolled {
+    padding: 0.8rem 1rem;
+  }
+  
+  .shiva-navbar-logo a {
+    font-size: 1.3rem;
+  }
+
+  .shiva-navbar.scrolled .shiva-navbar-logo a {
+    font-size: 1.2rem;
+  }
+
+  .shiva-navbar-mobile-menu .shiva-nav-link {
+    font-size: 1.2rem;
+    padding: 0.8rem;
+  }
+}
+
+@media (min-width: 769px) {
+  .shiva-mobile-menu-wrapper {
+    display: none;
+  }
+}

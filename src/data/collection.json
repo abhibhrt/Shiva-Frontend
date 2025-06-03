@@ -1,0 +1,248 @@
+[
+    {
+      "product_id": "ERICK1001",
+      "name": "Shiva E-Rickshaw Classic",
+      "brand": "Shiva Enterprises",
+      "model": "Classic-2025",
+      "type": "Electric Rickshaw",
+      "price": 135000,
+      "currency": "INR",
+      "availability": "In Stock",
+      "description": "Reliable and economical E-Rickshaw designed for daily urban commute with excellent battery life and comfortable seating.",
+      "features": [
+        "Seating capacity: 4 passengers + 1 driver",
+        "Battery: 48V 90Ah Lead Acid",
+        "Range: 90 km per charge",
+        "Charging Time: 6-8 hours",
+        "Top Speed: 25 km/h",
+        "Roof Type: Metal Sheet",
+        "Tyres: Tubeless tyres"
+      ],
+      "specifications": {
+        "battery_type": "Lead Acid",
+        "battery_voltage": "48V",
+        "battery_capacity": "90Ah",
+        "motor_power": "900W",
+        "range_per_charge": "90 km",
+        "charging_time": "6-8 hours",
+        "top_speed": "25 km/h",
+        "brake_type": "Drum Brake",
+        "suspension": "Leaf Spring Suspension"
+      },
+      "dimensions": {
+        "length": "2750 mm",
+        "width": "980 mm",
+        "height": "1750 mm",
+        "weight": "310 kg"
+      },
+      "colors_available": ["Blue", "Red"],
+      "warranty": "12 months on battery and motor",
+      "images": [
+        "https://img.freepik.com/free-vector/auto-rickshaw-illustration_1308-88109.jpg",
+        "https://img.freepik.com/free-vector/tuk-tuk-indian-three-wheeler-transport_1308-131699.jpg",
+        "https://img.freepik.com/free-vector/auto-rickshaw-flat-illustration_1308-135218.jpg"
+      ],
+      "contact_for_purchase": {
+        "phone": "+91-9876543210",
+        "email": "sales@shivaenterprises.com",
+        "whatsapp": "https://wa.me/919876543210"
+      }
+    },
+    {
+      "product_id": "ERICK1002",
+      "name": "Shiva E-Rickshaw Deluxe",
+      "brand": "Shiva Enterprises",
+      "model": "Deluxe-2025",
+      "type": "Electric Rickshaw",
+      "price": 145000,
+      "currency": "INR",
+      "availability": "In Stock",
+      "description": "Eco-friendly and efficient E-Rickshaw with spacious seating, long battery life, and modern design. Ideal for urban and semi-urban transport.",
+      "features": [
+        "Seating capacity: 4 passengers + 1 driver",
+        "Battery: 48V 100Ah Lead Acid",
+        "Range: 100 km per charge",
+        "Charging Time: 6-8 hours",
+        "Top Speed: 25 km/h",
+        "Roof Type: Fiber with LED lighting",
+        "Tyres: Heavy-duty tubeless tyres"
+      ],
+      "specifications": {
+        "battery_type": "Lead Acid",
+        "battery_voltage": "48V",
+        "battery_capacity": "100Ah",
+        "motor_power": "1000W",
+        "range_per_charge": "100 km",
+        "charging_time": "6-8 hours",
+        "top_speed": "25 km/h",
+        "brake_type": "Drum Brake",
+        "suspension": "Hydraulic Shock Absorbers"
+      },
+      "dimensions": {
+        "length": "2780 mm",
+        "width": "990 mm",
+        "height": "1790 mm",
+        "weight": "320 kg"
+      },
+      "colors_available": ["Blue", "Red", "Green", "Yellow"],
+      "warranty": "12 months on battery and motor",
+      "images": [
+        "https://5.imimg.com/data5/SELLER/Default/2023/1/YD/SS/WB/14367678/e-rickshaw-vehicle-500x500.jpg",
+        "https://5.imimg.com/data5/SELLER/Default/2022/1/UZ/ZY/AC/137237019/battery-rickshaw-500x500.jpg",
+        "https://5.imimg.com/data5/SELLER/Default/2022/2/OO/GG/UG/82884544/electric-rickshaw-500x500.jpg"
+      ],
+      "contact_for_purchase": {
+        "phone": "+91-9876543210",
+        "email": "sales@shivaenterprises.com",
+        "whatsapp": "https://wa.me/919876543210"
+      }
+    },
+    {
+      "product_id": "ERICK1003",
+      "name": "Shiva E-Rickshaw Lithium Pro",
+      "brand": "Shiva Enterprises",
+      "model": "LithiumPro-2025",
+      "type": "Electric Rickshaw",
+      "price": 165000,
+      "currency": "INR",
+      "availability": "Limited Stock",
+      "description": "High-performance e-rickshaw equipped with lithium battery for faster charging and longer life. Best for commercial operations.",
+      "features": [
+        "Seating capacity: 4 passengers + 1 driver",
+        "Battery: 60V 80Ah Lithium-ion",
+        "Range: 120 km per charge",
+        "Charging Time: 4-5 hours",
+        "Top Speed: 30 km/h",
+        "Roof Type: ABS plastic with fan",
+        "Tyres: High-grip radial tyres"
+      ],
+      "specifications": {
+        "battery_type": "Lithium-ion",
+        "battery_voltage": "60V",
+        "battery_capacity": "80Ah",
+        "motor_power": "1200W",
+        "range_per_charge": "120 km",
+        "charging_time": "4-5 hours",
+        "top_speed": "30 km/h",
+        "brake_type": "Disc + Drum",
+        "suspension": "Hydraulic Suspension"
+      },
+      "dimensions": {
+        "length": "2800 mm",
+        "width": "1000 mm",
+        "height": "1800 mm",
+        "weight": "300 kg"
+      },
+      "colors_available": ["Black", "White", "Green"],
+      "warranty": "18 months on battery and motor",
+      "images": [
+        "https://5.imimg.com/data5/SELLER/Default/2021/3/DL/WY/TX/116032439/lithium-e-rickshaw-500x500.jpg",
+        "https://5.imimg.com/data5/SELLER/Default/2023/2/JL/JU/XM/136070015/lithium-e-rickshaw-vehicle-500x500.jpg",
+        "https://5.imimg.com/data5/SELLER/Default/2022/5/AD/YW/VW/3645886/e-rickshaw-lithium-battery-500x500.jpg"
+      ],
+      "contact_for_purchase": {
+        "phone": "+91-9876543210",
+        "email": "sales@shivaenterprises.com",
+        "whatsapp": "https://wa.me/919876543210"
+      }
+    },
+    {
+      "product_id": "ERICK1004",
+      "name": "Shiva E-Cargo Rickshaw",
+      "brand": "Shiva Enterprises",
+      "model": "Cargo-2025",
+      "type": "Electric Cargo Rickshaw",
+      "price": 155000,
+      "currency": "INR",
+      "availability": "In Stock",
+      "description": "Electric cargo rickshaw for light commercial transport with high payload capacity and robust frame for daily logistics.",
+      "features": [
+        "Payload capacity: 500 kg",
+        "Battery: 48V 100Ah Lead Acid",
+        "Range: 100 km per charge",
+        "Charging Time: 6-8 hours",
+        "Top Speed: 22 km/h",
+        "Roof Type: Flatbed covered",
+        "Tyres: Wide tread commercial tyres"
+      ],
+      "specifications": {
+        "battery_type": "Lead Acid",
+        "battery_voltage": "48V",
+        "battery_capacity": "100Ah",
+        "motor_power": "1000W",
+        "range_per_charge": "100 km",
+        "charging_time": "6-8 hours",
+        "top_speed": "22 km/h",
+        "brake_type": "Drum Brake",
+        "suspension": "Leaf Spring"
+      },
+      "dimensions": {
+        "length": "2850 mm",
+        "width": "1000 mm",
+        "height": "1700 mm",
+        "weight": "360 kg"
+      },
+      "colors_available": ["Green", "Orange"],
+      "warranty": "12 months on battery and motor",
+      "images": [
+        "https://5.imimg.com/data5/SELLER/Default/2021/3/WH/TN/KX/128201489/e-cargo-rickshaw-500x500.jpg",
+        "https://5.imimg.com/data5/SELLER/Default/2021/3/WW/NY/JH/116032439/cargo-electric-rickshaw-500x500.jpg",
+        "https://5.imimg.com/data5/SELLER/Default/2023/2/BP/LF/YX/23389320/electric-cargo-rickshaw-500x500.jpg"
+      ],
+      "contact_for_purchase": {
+        "phone": "+91-9876543210",
+        "email": "sales@shivaenterprises.com",
+        "whatsapp": "https://wa.me/919876543210"
+      }
+    },
+    {
+      "product_id": "ERICK1005",
+      "name": "Shiva E-Rickshaw Premium XL",
+      "brand": "Shiva Enterprises",
+      "model": "PremiumXL-2025",
+      "type": "Electric Rickshaw",
+      "price": 175000,
+      "currency": "INR",
+      "availability": "Pre-Order",
+      "description": "Premium class E-Rickshaw with stylish body, alloy wheels, and longest range in its segment. Perfect for high-end commercial use.",
+      "features": [
+        "Seating capacity: 5 passengers + 1 driver",
+        "Battery: 60V 100Ah Lithium-ion",
+        "Range: 130 km per charge",
+        "Charging Time: 5 hours",
+        "Top Speed: 30 km/h",
+        "Roof Type: Fiber with fan and light",
+        "Tyres: Alloy wheels with tubeless tyres"
+      ],
+      "specifications": {
+        "battery_type": "Lithium-ion",
+        "battery_voltage": "60V",
+        "battery_capacity": "100Ah",
+        "motor_power": "1500W",
+        "range_per_charge": "130 km",
+        "charging_time": "5 hours",
+        "top_speed": "30 km/h",
+        "brake_type": "Disc Brakes",
+        "suspension": "Double Hydraulic Shocks"
+      },
+      "dimensions": {
+        "length": "2900 mm",
+        "width": "1050 mm",
+        "height": "1850 mm",
+        "weight": "340 kg"
+      },
+      "colors_available": ["White", "Blue", "Black"],
+      "warranty": "24 months on battery and motor",
+      "images": [
+        "https://5.imimg.com/data5/SELLER/Default/2021/10/LO/HJ/KZ/85837407/electric-auto-rickshaw-500x500.jpg",
+        "https://5.imimg.com/data5/SELLER/Default/2022/1/LF/XU/AF/82884544/electric-rickshaw-500x500.jpg",
+        "https://5.imimg.com/data5/SELLER/Default/2021/9/MP/OU/WA/12916592/electric-rickshaw-front.jpg"
+      ],
+      "contact_for_purchase": {
+        "phone": "+91-9876543210",
+        "email": "sales@shivaenterprises.com",
+        "whatsapp": "https://wa.me/919876543210"
+      }
+    }
+  ]
+  
