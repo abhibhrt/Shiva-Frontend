@@ -43,6 +43,7 @@
   line-height: 1.6;
   margin-bottom: 1rem;
   color: #b0b0b0;
+  display: flex;
 }
 
 .shiva-footer-links {
