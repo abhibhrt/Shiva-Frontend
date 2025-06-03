@@ -10,7 +10,8 @@ const Home = () => {
   const images = [
     'https://media.gettyimages.com/id/915703156/photo/india-economy-auto.jpg?s=1024x1024&w=gi&k=20&c=ekNJO0hX0cMVL-FoF7KcZ-Uek23H4JqNWaXyyPN-kto=',
     'https://media.gettyimages.com/id/2024392309/photo/uber-ceo-dara-khosrowshahi-in-india.jpg?s=1024x1024&w=gi&k=20&c=2QU7bpXvARgcbdLBouFxPNrTtAMPL9s5i1Gl1cEvp9I=',
-    'https://media.gettyimages.com/id/2024392594/photo/uber-ceo-dara-khosrowshahi-in-india.jpg?s=1024x1024&w=gi&k=20&c=DIrXIsXZ8blg8xnuBqIzcYUx35c4xiTRZ4g01rRn3S4='
+    'https://media.gettyimages.com/id/2024392594/photo/uber-ceo-dara-khosrowshahi-in-india.jpg?s=1024x1024&w=gi&k=20&c=DIrXIsXZ8blg8xnuBqIzcYUx35c4xiTRZ4g01rRn3S4=',
+    'Bg.png'
   ];
 
   const [searchParams, setSearchParams] = useState({
