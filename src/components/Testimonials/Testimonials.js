@@ -197,7 +197,7 @@ const Testimonials = () => {
   return (
     <section className="testimonials-section">
       <div className="testimonials-container">
-        <h2 className="testimonials-heading">Customer Reviews</h2>
+        <h2 className="web-title">Customer Reviews</h2>
         
         {loading ? (
           <div className="testimonials-loader">

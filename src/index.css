@@ -17,6 +17,7 @@ html{
   --octonary-color: #2a5298;
   --nonary-color: #1e3c72;
   --denary-color: #2a5298;
+  --brand-color:rgb(0, 165, 157);
 }
 .shiva-enterprises-app {
   display: flex;
@@ -29,4 +30,23 @@ html{
   flex: 1;
   padding: 0;
   margin: 0;
+}
+
+.web-title {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  color: var(--brand-color);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.web-title::after {
+  content: '';
+  display: block;
+  width: 25%;
+  height: 2px;
+  background: #4e9af1;
+  margin: 0.5rem auto 0;
+  border-radius: 2px;
 }

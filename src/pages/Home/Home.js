@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './home.css';
 import { FaSearch, FaBatteryThreeQuarters, FaPalette, FaRupeeSign } from 'react-icons/fa';
 import { IoSpeedometerOutline } from 'react-icons/io5';
+import FeaturedProducts from '../../components/Featured/FeaturedProducts.js'
 
 const Home = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -40,7 +41,7 @@ const Home = () => {
   };
 
   return (
-    <div className="er-home-container" id='home'>
+   <> <div className="er-home-container" id='home'>
       {/* Image Slider Background */}
       <div className="er-slider">
         {images.map((image, index) => (
@@ -57,11 +58,11 @@ const Home = () => {
       <div className="er-home-content">
         <div className='er-hero-text'>
           <h1 className="er-home-title">Find Your Perfect <span>E-Rickshaw</span></h1>
-          <p className="er-home-subtitle">Eco-friendly rides at unbeatable prices</p>
+          <p className="er-home-subtitle">Unbelivable Products in Unbeatable Prices</p>
           <button 
             className="er-cta-button" 
             onClick={() => setShowSearch(!showSearch)}>
-            {showSearch ? 'Hide Options' : 'Find Your Ride'}
+            {showSearch ? 'Hide Options' : 'Find Preference'}
           </button>
         </div>
 
@@ -161,6 +162,7 @@ const Home = () => {
         </form>
       </div>
     </div>
+      <FeaturedProducts/></>
   );
 };
 
