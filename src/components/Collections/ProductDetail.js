@@ -63,7 +63,7 @@ const ProductDetail = () => {
         </div>
       </div>
 
-      <div className="product-info">
+      <div className="det-product-info">
         <h1>{product.name}</h1>
         <p className="product-model">{product.brand} - {product.model}</p>
         

@@ -38,7 +38,7 @@
   margin-right: 20px;
   height: fit-content;
   position: sticky;
-  top: 100px; /* Below navbar */
+  top: 100px;
 }
 
 .filters-sidebar h3 {
@@ -136,7 +136,6 @@
 .product-info {
   width: 100%;
   padding: 20px;
-  background-color: red;
 }
 
 .product-info h3 {
@@ -201,10 +200,11 @@
   }
 
   .filters-sidebar {
-    width: 100%;
+    width: 88%;
     margin-bottom: 25px;
     display: none;
     position: static;
+    padding: 6%;
   }
 
   .filters-sidebar.mobile-visible {
