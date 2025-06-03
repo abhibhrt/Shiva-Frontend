@@ -87,6 +87,8 @@ address p {
   font-style: normal;
   color: #b0b0b0;
   line-height: 1.6;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .shiva-footer-bottom {
