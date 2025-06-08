@@ -32,7 +32,7 @@ html{
   margin: 0;
 }
 
-.web-title {
+/* .web-title {
   text-align: center;
   font-size: 1.5rem;
   margin-bottom: 2rem;
@@ -49,4 +49,29 @@ html{
   background: #4e9af1;
   margin: 0.5rem auto 0;
   border-radius: 2px;
+} */
+
+.web-title {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: #ffffff;
+  position: relative;
+  display: inline-block;
+}
+
+.web-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #4f46e5, #7c3aed);
+  border-radius: 2px;
+}
+
+@media (max-width:768px) {
+  .web-title{
+    font-size: 1.5rem;
+  }
 }

@@ -1,52 +1,45 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header/Navbar';
 import Home from './pages/Home/Home';
 import Footer from './components/Footer/Footer';
-import { translations } from './data/translations';
 import Testimonials from './components/Testimonials/Testimonials';
 import Collections from './components/Collections/Collections';
 import ProductDetail from './components/Collections/ProductDetail';
+import About from './pages/About/About';
 
-function App() { 
-  const [language, setLanguage] = useState('en');
-
-  const toggleLanguage = () => {
-    setLanguage(prevLang => prevLang === 'en' ? 'hi' : 'en');
-  };
-
-  const t = (key) => {
-    return translations[key][language] || key;
-  };
+function App() {
 
   return (
     <Router>
       <div className="shiva-enterprises-app">
-        <Header t={t} toggleLanguage={toggleLanguage} language={language} />
-        
+        <Header />
+
         <main className="shiva-enterprises-main">
           <Routes>
-            <Route 
-              path="/" 
-              element={<Home t={t} language={language} />} 
+            <Route
+              path="/"
+              element={<Home />}
             />
-            <Route 
-              path="/testimonials" 
-              element={<Testimonials t={t} />} 
+            <Route
+              path='/about'
+              element={<About />}
             />
-            <Route 
-              path="/collections" 
-              element={<Collections t={t} />} 
+            <Route
+              path="/testimonials"
+              element={<Testimonials />}
             />
-            <Route 
-              path="/collections/:productId" 
-              element={<ProductDetail t={t} />} 
+            <Route
+              path="/collections"
+              element={<Collections />}
             />
-            {/* Add more routes as needed */}
+            <Route
+              path="/collections/:productId"
+              element={<ProductDetail />}
+            />
           </Routes>
         </main>
-
-        <Footer t={t} language={language} toggleLanguage={toggleLanguage} />
+        <Footer />
       </div>
     </Router>
   );
