@@ -48,8 +48,7 @@ const Navbar = () => {
           {/* Desktop Navigation */}
           <ul className="shiva-navbar-links">
             <li className="nav-item"><NavLink to='/' className="shiva-nav-link">Home</NavLink></li>
-            <li className="nav-item"><NavLink to='/about' className="shiva-nav-link">About</NavLink></li>
-            <li className="nav-item"><NavLink to="/testimonials" className="shiva-nav-link">Testimonials</NavLink></li>
+            <li className="nav-item"><NavLink to="/feedbacks" className="shiva-nav-link">Feedbacks</NavLink></li>
             <li className="nav-item"><NavLink to="/collections" className="shiva-nav-link">Collections</NavLink></li>
             <li className="nav-item"><NavLink to="/contact" className="shiva-nav-link">Contact</NavLink></li>
           </ul>
@@ -66,7 +65,7 @@ const Navbar = () => {
         <ul className="shiva-navbar-mobile-menu">
           <li className="nav-item"><NavLink to='/' className="shiva-nav-link" onClick={closeMobileMenu}>Home</NavLink></li>
           <li className="nav-item"><NavLink to='/about' className="shiva-nav-link" onClick={closeMobileMenu}>About</NavLink></li>
-          <li className="nav-item"><NavLink to="/testimonials" className="shiva-nav-link" onClick={closeMobileMenu}>Testimonials</NavLink></li>
+          <li className="nav-item"><NavLink to="/feedbacks" className="shiva-nav-link" onClick={closeMobileMenu}>Feedbacks</NavLink></li>
           <li className="nav-item"><NavLink to="/collections" className="shiva-nav-link" onClick={closeMobileMenu}>Collections</NavLink></li>
           <li className="nav-item"><NavLink to="/contact" className="shiva-nav-link" onClick={closeMobileMenu}>Contact</NavLink></li>
         </ul>

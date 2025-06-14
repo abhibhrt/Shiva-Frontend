@@ -3,10 +3,12 @@ body {
   padding: 0;
   background-color: black;
 }
-html{
+
+html {
   scroll-behavior: smooth;
 }
-:root{
+
+:root {
   --primary-color: #1e3c72;
   --secondary-color: #2a5298;
   --tertiary-color: #1e726a;
@@ -17,8 +19,10 @@ html{
   --octonary-color: #2a5298;
   --nonary-color: #1e3c72;
   --denary-color: #2a5298;
-  --brand-color:rgb(0, 165, 157);
+  --brand-color: rgb(0, 165, 157);
+  --bg-dark: rgb(27, 27, 27);
 }
+
 .shiva-enterprises-app {
   display: flex;
   flex-direction: column;
@@ -32,24 +36,62 @@ html{
   margin: 0;
 }
 
-/* .web-title {
-  text-align: center;
-  font-size: 1.5rem;
-  margin-bottom: 2rem;
+.loading-container {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   color: var(--brand-color);
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  background-color: var(--bg-dark);
+  z-index: 999;
+}
+.loader {
+  width: 60px;
+  height: 40px;
   position: relative;
+  display: inline-block;
+  --base-color: var(--bg-dark); /*use your base color*/
+}
+.loader::before {
+  content: '';  
+  left: 0;
+  top: 0;
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #FFF;
+  background-image: radial-gradient(circle 10px at 18px 18px, var(--base-color) 100%, transparent 0), radial-gradient(circle 4px at 18px 0px, var(--base-color) 100%, transparent 0), radial-gradient(circle 4px at 0px 18px, var(--base-color) 100%, transparent 0), radial-gradient(circle 4px at 36px 18px, var(--base-color) 100%, transparent 0), radial-gradient(circle 4px at 18px 36px, var(--base-color) 100%, transparent 0), radial-gradient(circle 4px at 30px 5px, var(--base-color) 100%, transparent 0), radial-gradient(circle 4px at 30px 5px, var(--base-color) 100%, transparent 0), radial-gradient(circle 4px at 30px 30px, var(--base-color) 100%, transparent 0), radial-gradient(circle 4px at 5px 30px, var(--base-color) 100%, transparent 0), radial-gradient(circle 4px at 5px 5px, var(--base-color) 100%, transparent 0);
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+  animation: rotationBack 3s linear infinite;
+}
+.loader::after {
+  content: '';  
+  left: 35px;
+  top: 15px;
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #FFF;
+  background-image: radial-gradient(circle 6px at 12px 12px, var(--base-color) 100%, transparent 0), radial-gradient(circle 2.5px at 12px 0px, var(--base-color) 100%, transparent 0), radial-gradient(circle 2.5px at 0px 12px, var(--base-color) 100%, transparent 0), radial-gradient(circle 2.5px at 24px 12px, var(--base-color) 100%, transparent 0), radial-gradient(circle 2.5px at 12px 24px, var(--base-color) 100%, transparent 0), radial-gradient(circle 2.5px at 20px 3px, var(--base-color) 100%, transparent 0), radial-gradient(circle 2.5px at 20px 3px, var(--base-color) 100%, transparent 0), radial-gradient(circle 2.5px at 20px 20px, var(--base-color) 100%, transparent 0), radial-gradient(circle 2.5px at 3px 20px, var(--base-color) 100%, transparent 0), radial-gradient(circle 2.5px at 3px 3px, var(--base-color) 100%, transparent 0);
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+  animation: rotationBack 4s linear infinite reverse;
 }
 
-.web-title::after {
-  content: '';
-  display: block;
-  width: 25%;
-  height: 2px;
-  background: #4e9af1;
-  margin: 0.5rem auto 0;
-  border-radius: 2px;
-} */
+@keyframes rotationBack {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}  
 
 .web-title {
   font-size: 2.5rem;
@@ -71,7 +113,7 @@ html{
 }
 
 @media (max-width:768px) {
-  .web-title{
+  .web-title {
     font-size: 1.5rem;
   }
 }

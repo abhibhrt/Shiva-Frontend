@@ -1,12 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
-import './Testimonials.css';
-import { GetFetcher } from '../utils/GetFetcher';
-import { usePostFetcher } from '../utils/PostFetcher';
-import { useAlert } from '../Alert/Alert'
+import './feedbacks.css';
+import { useAlert } from '../Alert/Alert';
+import { useGlobalData } from '../../context/GlobalDataContext';
 
-const Testimonials = () => {
+const Feedback = () => {
   const apiUrl = 'http://localhost:5000/api/feedback';
-  const { data, loading, error } = GetFetcher({ apiUrl });
+  const { feedback, refetch, loading } = useGlobalData();
   const [allTestimonials, setAllTestimonials] = useState([]);
   const [payload, setPayload] = useState({
     name: '',
@@ -15,39 +14,48 @@ const Testimonials = () => {
     rating: 0
   });
   const [hoverRating, setHoverRating] = useState(0);
-  const [shouldSubmit, setShouldSubmit] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const containerRef = useRef(null);
   const { showAlert, AlertComponent } = useAlert();
-  const response = usePostFetcher(
-    shouldSubmit ? apiUrl : null,
-    shouldSubmit ? payload : null
-  );
 
   useEffect(() => {
-    if (data && data.success && Array.isArray(data.data)) {
-      setAllTestimonials(data.data);
+    if (feedback && feedback.success && Array.isArray(feedback.data)) {
+      setAllTestimonials(feedback.data);
     }
-  }, [data]);
+  }, [feedback]);
 
-  useEffect(() => {
-    if (response) {
-      if (response.status === 'success') {
-        showAlert(response.message, response.status);
-        setPayload({
-          name: '',
-          contact: '',
-          feedMessage: '',
-          rating: 0
-        });
-        setTimeout(() => {
-          window.location.reload();
-        }, 3000);
-      } else{
-        showAlert(response.message, response.status);
-      }
-      setShouldSubmit(false);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const { name, contact, feedMessage, rating } = payload;
+
+    if (!name || !contact || !feedMessage || rating === 0) {
+      showAlert('Please fill all the fields', 'warning');
+      return;
     }
-  }, [response, showAlert]);
+
+    setIsSubmitting(true);
+    try {
+      const res = await fetch(apiUrl, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+      const data = await res.json();
+
+      showAlert(data.message, 'success');
+      setPayload({ name: '', contact: '', feedMessage: '', rating: 0 });
+      setTimeout(() => {
+        refetch();
+      }, 3000);
+      showAlert(data.message, 'success');
+
+    } catch (err) {
+      showAlert('An error occurred while submitting feedback.', 'error');
+      console.error(err);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   const formatDate = (dateString) => {
     const options = {
@@ -69,17 +77,13 @@ const Testimonials = () => {
     setPayload(prev => ({ ...prev, rating }));
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (!payload.name || !payload.contact || !payload.feedMessage || payload.rating === 0) {
-      showAlert('Please fill all the fields', 'warning');
-      return;
-    }
-    setShouldSubmit(true);
-  };
-
-  if (error) {
-    return <div className="error-message">Error loading testimonials: {error.message}</div>;
+   if (loading) {
+    return (
+      <div className="loading-container">
+        <span className="loader"></span>
+        <p>Loading Feedbacks...</p>
+      </div>
+    );
   }
 
   return (
@@ -87,13 +91,6 @@ const Testimonials = () => {
       <AlertComponent />
       <div className="testimonials-container">
         <h2 className="web-title">Customer Reviews</h2>
-
-        {loading ? (
-          <div className="testimonials-loader">
-            <div className="loader-spinner"></div>
-            <p>Loading testimonials...</p>
-          </div>
-        ) : (
           <div className="testimonials-content">
             <div className="testimonials-list" ref={containerRef}>
               {allTestimonials.map((testimonial, index) => (
@@ -175,16 +172,15 @@ const Testimonials = () => {
                   ></textarea>
                 </div>
 
-                <button type="submit" className="submit-button" disabled={shouldSubmit}>
-                  {shouldSubmit ? 'Submitting...' : 'Submit Review'}
+                <button type="submit" className="submit-button" disabled={isSubmitting}>
+                  {isSubmitting ? 'Submitting...' : 'Submit Review'}
                 </button>
               </form>
             </div>
           </div>
-        )}
       </div>
     </section>
   );
 };
 
-export default Testimonials;
+export default Feedback;

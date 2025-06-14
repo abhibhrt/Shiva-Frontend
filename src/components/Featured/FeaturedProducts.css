@@ -1,3 +1,7 @@
+.featured-container{
+  background-color: var(--bg-dark);
+}
+
 .featured-products-container {
   max-width: 1200px;
   margin: 0 auto;

@@ -81,70 +81,72 @@ const FeaturedProducts = () => {
   }, [currentProductIndex, currentSlideIndex, handleProductChange]);
 
   return (
-    <div className="featured-products-container">
-      <h2 className="web-title">Featured E-Rickshaws</h2>
+    <div className='featured-container'>
+      <div className="featured-products-container">
+        <h2 className="web-title">Featured E-Rickshaws</h2>
 
-      <div className="featured-product-slider">
-        <div className="slider-images">
-          {products[currentProductIndex].images.map((image, index) => (
-            <div
-              key={`${currentProductIndex}-${index}`}
-              className={`slide ${index === currentSlideIndex ? 'active' : ''}`}
-              style={{ backgroundImage: `url(${image})` }}>
-              <div className="slide-overlay"></div>
+        <div className="featured-product-slider">
+          <div className="slider-images">
+            {products[currentProductIndex].images.map((image, index) => (
               <div
-                className={`fe-product-info ${isTransitioning ? 'product-exit' : 'product-enter'}`}
-                onClick={handleProductClick}  >
-                <h3 className={`fe-product-name ${featureVisible[0] ? 'visible' : ''}`}>
-                  {products[currentProductIndex].name}
-                </h3>
-                <div className={`fe-product-price ${featureVisible[0] ? 'visible' : ''}`}>
-                  ₹{products[currentProductIndex].price.toLocaleString('en-IN')}
+                key={`${currentProductIndex}-${index}`}
+                className={`slide ${index === currentSlideIndex ? 'active' : ''}`}
+                style={{ backgroundImage: `url(${image})` }}>
+                <div className="slide-overlay"></div>
+                <div
+                  className={`fe-product-info ${isTransitioning ? 'product-exit' : 'product-enter'}`}
+                  onClick={handleProductClick}  >
+                  <h3 className={`fe-product-name ${featureVisible[0] ? 'visible' : ''}`}>
+                    {products[currentProductIndex].name}
+                  </h3>
+                  <div className={`fe-product-price ${featureVisible[0] ? 'visible' : ''}`}>
+                    ₹{products[currentProductIndex].price.toLocaleString('en-IN')}
+                  </div>
+                  <ul className="fe-product-features">
+                    {products[currentProductIndex].features.map((feature, i) => (
+                      <li
+                        key={i}
+                        className={`feature-item ${featureVisible[i] ? 'visible' : ''}`}
+                        style={{ transitionDelay: `${i * 0.2}s` }}>
+                        <span className="feature-icon">✓</span> {feature}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-                <ul className="fe-product-features">
-                  {products[currentProductIndex].features.map((feature, i) => (
-                    <li
-                      key={i}
-                      className={`feature-item ${featureVisible[i] ? 'visible' : ''}`}
-                      style={{ transitionDelay: `${i * 0.2}s` }}>
-                      <span className="feature-icon">✓</span> {feature}
-                    </li>
-                  ))}
-                </ul>
               </div>
-            </div>
-          ))}
-        </div>
-
-        <div className="slider-controls">
-          <div className="fe-product-nav-buttons">
-            <button
-              className="nav-button prev"
-              onClick={() => handleProductChange(
-                (currentProductIndex - 1 + products.length) % products.length
-              )}
-            >
-              &lt;
-            </button>
-            <span className="fe-product-counter">
-              {currentProductIndex + 1} / {products.length}
-            </span>
-            <button
-              className="nav-button next"
-              onClick={() => handleProductChange(
-                (currentProductIndex + 1) % products.length
-              )}>
-              &gt;
-            </button>
+            ))}
           </div>
 
-          <div className="slide-dots">
-            {products[currentProductIndex].images.map((_, index) => (
+          <div className="slider-controls">
+            <div className="fe-product-nav-buttons">
               <button
-                key={index}
-                className={`slide-dot ${index === currentSlideIndex ? 'active' : ''}`}
-                onClick={() => handleSlideChange(index)} />
-            ))}
+                className="nav-button prev"
+                onClick={() => handleProductChange(
+                  (currentProductIndex - 1 + products.length) % products.length
+                )}
+              >
+                &lt;
+              </button>
+              <span className="fe-product-counter">
+                {currentProductIndex + 1} / {products.length}
+              </span>
+              <button
+                className="nav-button next"
+                onClick={() => handleProductChange(
+                  (currentProductIndex + 1) % products.length
+                )}>
+                &gt;
+              </button>
+            </div>
+
+            <div className="slide-dots">
+              {products[currentProductIndex].images.map((_, index) => (
+                <button
+                  key={index}
+                  className={`slide-dot ${index === currentSlideIndex ? 'active' : ''}`}
+                  onClick={() => handleSlideChange(index)} />
+              ))}
+            </div>
           </div>
         </div>
       </div>

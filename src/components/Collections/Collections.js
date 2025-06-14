@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useGlobalData } from '../../context/GlobalDataContext';
 import './collection.css';
-import products from '../../data/collection.json';
 
 const Collections = () => {
   const navigate = useNavigate();
+  const { products, loading } = useGlobalData();
   const [showFilters, setShowFilters] = useState(false);
   const [filters, setFilters] = useState({
     priceRange: [0, 200000],
@@ -31,22 +32,35 @@ const Collections = () => {
   };
 
   const filteredProducts = products.filter(product => {
+
     return (
       product.price >= filters.priceRange[0] &&
       product.price <= filters.priceRange[1] &&
-      (filters.batteryType === '' || product.specifications.battery_type === filters.batteryType) &&
-      (filters.color === '' || product.colors_available.includes(filters.color)) &&
-      (filters.availability === 'all' || product.availability === filters.availability)
-    );
+      (filters.batteryType === '' || product.battery.type.includes(filters.batteryType)) &&
+      (filters.color === '' || product.colorsAvailable.includes(filters.color)) &&
+      (filters.availability === 'all' ||
+        (filters.availability === 'In Stock' && product.stock > 0) ||
+        (filters.availability === 'Out of Stock' && product.stock === 0)
+      )
+    )
   });
 
   const viewProductDetails = (productId) => {
     navigate(`/collections/${productId}`);
   };
 
+  if (loading) {
+    return (
+      <div className="loading-container">
+        <span className="loader"></span>
+        <p>Loading Products...</p>
+      </div>
+    );
+  }
+
   return (
     <div className="collections-page">
-      <button 
+      <button
         className="mobile-filter-button"
         onClick={() => setShowFilters(!showFilters)}
       >
@@ -55,7 +69,7 @@ const Collections = () => {
 
       <div className={`filters-sidebar ${showFilters ? 'mobile-visible' : ''}`}>
         <h3>Filters</h3>
-        
+
         <div className="filter-group">
           <label>Price Range</label>
           <div className="price-range-inputs">
@@ -79,21 +93,21 @@ const Collections = () => {
 
         <div className="filter-group">
           <label>Battery Type</label>
-          <select 
-            name="batteryType" 
+          <select
+            name="batteryType"
             value={filters.batteryType}
             onChange={handleFilterChange}
           >
             <option value="">All Types</option>
-            <option value="Lead Acid">Lead Acid</option>
-            <option value="Lithium Ion">Lithium Ion</option>
+            <option value="VRLA">VRLA</option>
+            <option value="Lithium">Lithium</option>
           </select>
         </div>
 
         <div className="filter-group">
           <label>Color</label>
-          <select 
-            name="color" 
+          <select
+            name="color"
             value={filters.color}
             onChange={handleFilterChange}
           >
@@ -110,8 +124,8 @@ const Collections = () => {
 
         <div className="filter-group">
           <label>Availability</label>
-          <select 
-            name="availability" 
+          <select
+            name="availability"
             value={filters.availability}
             onChange={handleFilterChange}
           >
@@ -125,23 +139,25 @@ const Collections = () => {
       <div className="products-grid">
         {filteredProducts.length > 0 ? (
           filteredProducts.map(product => (
-            <div 
-              key={product.product_id} 
+            <div
+              key={product._id}
               className="product-card"
-              onClick={() => viewProductDetails(product.product_id)}>
+              onClick={() => viewProductDetails(product._id)}>
               <div className="product-image">
-                <img src={product.images[0]} alt={product.name} />
+                {product.images.length > 0 && (
+                  <img src={product.images[0]} alt={product.name} />
+                )}
               </div>
               <div className="product-info">
                 <h3>{product.name}</h3>
                 <p className="product-price">
-                  {product.currency} {product.price.toLocaleString()}
+                  ₹ {product.price.toLocaleString()}
                 </p>
                 <p className="product-spec">
-                  Battery: {product.specifications.battery_type} | Range: {product.specifications.range_per_charge}
+                  Battery: {product.battery.type.join(', ')} | Range: {product.avgKmPerCharge}
                 </p>
                 <p className="product-availability">
-                  {product.availability}
+                  {product.stock > 0 ? 'In Stock' : 'Out of Stock'}
                 </p>
               </div>
             </div>
