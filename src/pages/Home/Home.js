@@ -162,8 +162,8 @@ const Home = () => {
           </form>
         </div>
       </div>
-      <About/>
       <FeaturedProducts />
+      <About/>
     </>
   );
 };

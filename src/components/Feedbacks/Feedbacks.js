@@ -77,7 +77,7 @@ const Feedback = () => {
     setPayload(prev => ({ ...prev, rating }));
   };
 
-   if (loading) {
+  if (loading) {
     return (
       <div className="loading-container">
         <span className="loader"></span>
@@ -88,96 +88,96 @@ const Feedback = () => {
 
   return (
     <section className="testimonials-section">
+      <h2 className="web-title">Customer Reviews</h2>
       <AlertComponent />
       <div className="testimonials-container">
-        <h2 className="web-title">Customer Reviews</h2>
-          <div className="testimonials-content">
-            <div className="testimonials-list" ref={containerRef}>
-              {allTestimonials.map((testimonial, index) => (
-                <div key={index} className="testimonial-card">
-                  <div className="testimonial-header">
-                    <h3 className="testimonial-name">{testimonial.name}</h3>
-                    <div className="testimonial-meta">
-                      <div className="testimonial-rating">
-                        {[...Array(5)].map((_, i) => (
-                          <span
-                            key={i}
-                            className={`rating-star ${i < testimonial.rating ? 'filled' : ''}`}>
-                            ★
-                          </span>
-                        ))}
-                      </div>
-                      <div className="testimonial-date">
-                        {formatDate(testimonial.createdAt)}
-                      </div>
-                    </div>
-                  </div>
-                  <p className="testimonial-message">{testimonial.feedMessage}</p>
-                </div>
-              ))}
-            </div>
-
-            <div className="testimonial-form-container">
-              <h3 className="form-heading">Share Your Experience</h3>
-              <form onSubmit={handleSubmit} className="testimonial-form">
-                <div className="form-group">
-                  <label htmlFor="name">Your Name*</label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={payload.name}
-                    onChange={handleInputChange}
-                  />
-                </div>
-
-                <div className="form-group">
-                  <label htmlFor="contact">Email or Phone*</label>
-                  <input
-                    type="text"
-                    id="contact"
-                    name="contact"
-                    value={payload.contact}
-                    onChange={handleInputChange}
-                  />
-                </div>
-
-                <div className="form-group">
-                  <label>Your Rating*</label>
-                  <div className="rating-stars">
-                    {[...Array(5)].map((_, i) => {
-                      const ratingValue = i + 1;
-                      return (
+        <div className="testimonials-content">
+          <div className="testimonials-list" ref={containerRef}>
+            {allTestimonials.map((testimonial, index) => (
+              <div key={index} className="testimonial-card">
+                <div className="testimonial-header">
+                  <h3 className="testimonial-name">{testimonial.name}</h3>
+                  <div className="testimonial-meta">
+                    <div className="testimonial-rating">
+                      {[...Array(5)].map((_, i) => (
                         <span
-                          key={ratingValue}
-                          className={`rating-star ${ratingValue <= (hoverRating || payload.rating) ? 'filled' : ''}`}
-                          onClick={() => handleRatingClick(ratingValue)}
-                          onMouseEnter={() => setHoverRating(ratingValue)}
-                          onMouseLeave={() => setHoverRating(0)}>
+                          key={i}
+                          className={`rating-star ${i < testimonial.rating ? 'filled' : ''}`}>
                           ★
                         </span>
-                      );
-                    })}
+                      ))}
+                    </div>
+                    <div className="testimonial-date">
+                      {formatDate(testimonial.createdAt)}
+                    </div>
                   </div>
                 </div>
-
-                <div className="form-group">
-                  <label htmlFor="message">Your Feedback*</label>
-                  <textarea
-                    id="message"
-                    name="feedMessage"
-                    value={payload.feedMessage}
-                    onChange={handleInputChange}
-                    rows="4"
-                  ></textarea>
-                </div>
-
-                <button type="submit" className="submit-button" disabled={isSubmitting}>
-                  {isSubmitting ? 'Submitting...' : 'Submit Review'}
-                </button>
-              </form>
-            </div>
+                <p className="testimonial-message">{testimonial.feedMessage}</p>
+              </div>
+            ))}
           </div>
+
+          <div className="testimonial-form-container">
+            <h3 className="form-heading">Share Your Experience</h3>
+            <form onSubmit={handleSubmit} className="testimonial-form">
+              <div className="form-group">
+                <label htmlFor="name">Your Name*</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  value={payload.name}
+                  onChange={handleInputChange}
+                />
+              </div>
+
+              <div className="form-group">
+                <label htmlFor="contact">Email or Phone*</label>
+                <input
+                  type="text"
+                  id="contact"
+                  name="contact"
+                  value={payload.contact}
+                  onChange={handleInputChange}
+                />
+              </div>
+
+              <div className="form-group">
+                <label>Your Rating*</label>
+                <div className="rating-stars">
+                  {[...Array(5)].map((_, i) => {
+                    const ratingValue = i + 1;
+                    return (
+                      <span
+                        key={ratingValue}
+                        className={`rating-star ${ratingValue <= (hoverRating || payload.rating) ? 'filled' : ''}`}
+                        onClick={() => handleRatingClick(ratingValue)}
+                        onMouseEnter={() => setHoverRating(ratingValue)}
+                        onMouseLeave={() => setHoverRating(0)}>
+                        ★
+                      </span>
+                    );
+                  })}
+                </div>
+              </div>
+
+              <div className="form-group">
+                <label htmlFor="message">Your Feedback*</label>
+                <textarea
+                  id="message"
+                  name="feedMessage"
+                  value={payload.feedMessage}
+                  onChange={handleInputChange}
+                  rows="4"
+                ></textarea>
+              </div>
+
+              <button type="submit" className="submit-button" disabled={isSubmitting}>
+                {isSubmitting ? 'Submitting...' : 'Submit Review'}
+              </button>
+            </form>
+          </div>
+        </div>
       </div>
     </section>
   );

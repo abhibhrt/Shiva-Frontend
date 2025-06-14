@@ -41,8 +41,13 @@ export const GlobalDataProvider = ({ children }) => {
 
   return (
     <GlobalDataContext.Provider
-      value={{ brand, products, feedback, loading, error, refetch: fetchInitialData }}
-    >
+      value={{ brand, products, feedback, loading, error, refetch: fetchInitialData }}>
+      {
+        loading &&  <div className="loading-container">
+        <span className="loader"></span>
+        <p>Loading</p>
+      </div>
+      }
       <AlertComponent />
       {children}
     </GlobalDataContext.Provider>

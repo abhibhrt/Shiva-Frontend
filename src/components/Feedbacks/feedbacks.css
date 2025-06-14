@@ -4,7 +4,7 @@
 .testimonials-section {
   padding-top: 80px; /* Prevent overlap with fixed navbar */
   min-height: 100vh;
-  background-color: #121212;
+  background-color: var(--bg-dark);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #e0e0e0;
 }

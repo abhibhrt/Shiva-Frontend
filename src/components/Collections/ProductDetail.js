@@ -212,16 +212,16 @@ const ProductDetail = () => {
           <p>{product.warranty}</p>
         </div>
 
-        <div className="contact-section">
+        <div className="product-contact-section">
           <h3>Contact for Purchase</h3>
-          <div className="contact-methods">
-            <a href="tel:+919876543210" className="contact-button phone">
+          <div className="product-contact-methods">
+            <a href="tel:+919876543210" className="product-contact-button phone">
               Call: +91 9876543210
             </a>
-            <a href="mailto:sales@example.com" className="contact-button email">
+            <a href="mailto:sales@example.com" className="product-contact-button email">
               Email: sales@example.com
             </a>
-            <a href="https://wa.me/919876543210" className="contact-button whatsapp">
+            <a href="https://wa.me/919876543210" className="product-contact-button whatsapp">
               WhatsApp
             </a>
           </div>

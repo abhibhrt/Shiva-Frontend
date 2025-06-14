@@ -64,7 +64,6 @@ const Navbar = () => {
       <div className={`shiva-mobile-menu-wrapper ${isMobileMenuOpen ? 'active' : ''}`}>
         <ul className="shiva-navbar-mobile-menu">
           <li className="nav-item"><NavLink to='/' className="shiva-nav-link" onClick={closeMobileMenu}>Home</NavLink></li>
-          <li className="nav-item"><NavLink to='/about' className="shiva-nav-link" onClick={closeMobileMenu}>About</NavLink></li>
           <li className="nav-item"><NavLink to="/feedbacks" className="shiva-nav-link" onClick={closeMobileMenu}>Feedbacks</NavLink></li>
           <li className="nav-item"><NavLink to="/collections" className="shiva-nav-link" onClick={closeMobileMenu}>Collections</NavLink></li>
           <li className="nav-item"><NavLink to="/contact" className="shiva-nav-link" onClick={closeMobileMenu}>Contact</NavLink></li>

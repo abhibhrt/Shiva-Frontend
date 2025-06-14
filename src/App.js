@@ -8,6 +8,7 @@ import Collections from './components/Collections/Collections';
 import ProductDetail from './components/Collections/ProductDetail';
 import NewProductForm from './admin/newProduct';
 import { GlobalDataProvider } from './context/GlobalDataContext';
+import Contact from './components/Contact/Contact';
 
 function App() {
 
@@ -37,6 +38,10 @@ function App() {
               <Route
                 path='/products'
                 element={<NewProductForm />}
+              />
+              <Route
+                path='/contact'
+                element={<Contact />}
               />
             </Routes>
           </main>

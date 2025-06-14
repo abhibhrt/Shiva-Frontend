@@ -139,7 +139,7 @@
 .product-specifications,
 .product-dimensions,
 .product-warranty,
-.contact-section {
+.product-contact-section {
   margin-bottom: 30px;
   padding-bottom: 20px;
   border-bottom: 1px solid #333;
@@ -183,14 +183,14 @@ table td:first-child {
   width: 40%;
 }
 
-.contact-methods {
+.product-contact-methods {
   display: flex;
   flex-wrap: wrap;
   gap: 15px;
   margin-top: 20px;
 }
 
-.contact-button {
+.product-contact-button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -203,20 +203,20 @@ table td:first-child {
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
 }
 
-.contact-button:hover {
+.product-contact-button:hover {
   transform: translateY(-3px);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
-.contact-button.phone {
+.product-contact-button.phone {
   background: linear-gradient(135deg, #4CAF50, #2E7D32);
 }
 
-.contact-button.email {
+.product-contact-button.email {
   background: linear-gradient(135deg, #2196F3, #0D47A1);
 }
 
-.contact-button.whatsapp {
+.product-contact-button.whatsapp {
   background: linear-gradient(135deg, #25D366, #128C7E);
 }
 
@@ -283,12 +283,12 @@ table td:first-child {
     gap: 15px;
   }
 
-  .contact-methods {
+  .product-contact-methods {
     flex-direction: column;
     width: 90%;
   }
 
-  .contact-button {
+  .product-contact-button {
     width: 100%;
     text-align: center;
   }

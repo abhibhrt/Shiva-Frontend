@@ -21,6 +21,10 @@ html {
   --denary-color: #2a5298;
   --brand-color: rgb(0, 165, 157);
   --bg-dark: rgb(27, 27, 27);
+  --text-light: #ffffff;
+  --text-muted: #b0b0b0;
+  --card-bg: rgba(30, 60, 114, 0.2);
+  --card-border: rgba(42, 82, 152, 0.5);
 }
 
 .shiva-enterprises-app {
@@ -94,26 +98,18 @@ html {
 }  
 
 .web-title {
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   margin-bottom: 1.5rem;
   color: #ffffff;
   position: relative;
   display: inline-block;
-}
-
-.web-title::after {
-  content: '';
-  position: absolute;
-  bottom: -10px;
-  left: 0;
-  width: 80px;
-  height: 4px;
-  background: linear-gradient(90deg, #4f46e5, #7c3aed);
-  border-radius: 2px;
+  width: 100%;
+  text-align: center;
+  /* display: none; */
 }
 
 @media (max-width:768px) {
   .web-title {
-    font-size: 1.5rem;
+    font-size: 1rem;
   }
 }

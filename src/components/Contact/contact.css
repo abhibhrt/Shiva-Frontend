@@ -1,0 +1,211 @@
+/* Base Styles */
+:root {
+  --container-padding: clamp(1rem, 5vw, 2rem);
+  --section-padding: clamp(2rem, 6vw, 4rem);
+}
+.error{
+  color: red;
+  text-align: center;
+}
+
+.contact-section {
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  padding: 80px 0px;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.contact-header {
+  text-align: center;
+  margin: 0 auto 2rem;
+  max-width: min(800px, 90vw);
+}
+
+/* Main Container - Flexbox Layout */
+.contact-main-container {
+  display: flex;
+  flex-direction: row;
+  gap: clamp(1.5rem, 4vw, 2rem);
+  max-width: min(1200px, 95vw);
+  margin: 0 auto;
+  align-items: stretch;
+  flex-wrap: wrap;
+}
+
+.contact-info-card, 
+.contact-map-container {
+  flex: 1 1 min(100%, 500px);
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+/* Contact Info Card */
+.contact-info-card {
+  border-radius: 12px;
+  padding: clamp(1.5rem, 4vw, 2rem);
+  backdrop-filter: blur(5px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.492);
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-card-title {
+  color: var(--brand-color);
+  font-size: clamp(1.4rem, 3vw, 1.8rem);
+  margin-bottom: clamp(1.5rem, 3vw, 2rem);
+  padding-bottom: 0.8rem;
+  border-bottom: 2px solid var(--tertiary-color);
+}
+
+.contact-method {
+  display: flex;
+  gap: clamp(1rem, 3vw, 1.25rem);
+  margin-bottom: clamp(1rem, 3vw, 1.5rem);
+  align-items: flex-start;
+}
+
+.contact-icon-wrapper {
+  width: clamp(2.5rem, 6vw, 3.125rem);
+  height: clamp(2.5rem, 6vw, 3.125rem);
+  min-width: clamp(2.5rem, 6vw, 3.125rem);
+  border-radius: 50%;
+  background-color: var(--brand-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-method-icon {
+  color: var(--text-light);
+  font-size: clamp(1rem, 3vw, 1.2rem);
+}
+
+.contact-method-title {
+  color: var(--text-muted);
+  font-size: clamp(0.8rem, 2vw, 0.9rem);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.3rem;
+}
+
+.contact-method-value {
+  color: var(--text-light);
+  font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+  margin-bottom: 0.6rem;
+  font-weight: 500;
+  word-break: break-word;
+}
+
+.contact-action-button {
+  background-color: var(--brand-color);
+  color: var(--text-light);
+  border: none;
+  padding: 0.5rem clamp(1rem, 3vw, 1.25rem);
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+  transition: all 0.3s ease;
+}
+
+.contact-action-button:hover {
+  background-color: #008a84;
+  transform: translateY(-2px);
+}
+
+/* Social Media Section */
+.contact-social-section {
+  margin-top: auto;
+  padding-top: clamp(1.5rem, 3vw, 2rem);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.social-section-title {
+  color: var(--brand-color);
+  margin-bottom: clamp(0.8rem, 2vw, 1rem);
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+}
+
+.social-icons-container {
+  display: flex;
+  gap: clamp(0.8rem, 2vw, 1rem);
+}
+
+.social-icon-link {
+  width: clamp(2rem, 5vw, 2.5rem);
+  height: clamp(2rem, 5vw, 2.5rem);
+  font-size: clamp(1rem, 3vw, 1.2rem);
+}
+
+/* Map Container */
+.contact-map-container {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1rem, 3vw, 1.5rem);
+}
+
+.map-wrapper {
+  flex: 1;
+  min-height: min(50vh, 400px);
+  border-radius: 12px;
+  overflow: hidden;
+  aspect-ratio: 16/9;
+}
+
+.responsive-iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.map-action-button {
+  background-color: var(--brand-color);
+  color: var(--text-light);
+  border: none;
+  padding: clamp(0.6rem, 2vw, 0.8rem) clamp(1rem, 3vw, 1.5rem);
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: clamp(0.8rem, 2.5vw, 0.95rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .contact-section {
+    padding-top: 6rem;
+  }
+  
+  .contact-method {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .contact-icon-wrapper {
+    margin-bottom: 0.5rem;
+  }
+  
+  .map-wrapper {
+    aspect-ratio: unset;
+    min-height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  
+  .contact-main-container {
+    gap: 1.25rem;
+  }
+  
+  .contact-info-card {
+    padding: 1.25rem;
+  }
+  
+  .map-action-button {
+    width: 100%;
+  }
+}
