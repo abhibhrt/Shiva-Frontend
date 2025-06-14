@@ -3,6 +3,24 @@ import { useAlert } from '../components/Alert/Alert';
 
 const GlobalDataContext = createContext();
 
+// Utility: Fetch with Timeout
+const fetchWithTimeout = async (resource, options = {}, timeout = 15000) => {
+  const controller = new AbortController();
+  const id = setTimeout(() => controller.abort(), timeout);
+
+  try {
+    const response = await fetch(resource, {
+      ...options,
+      signal: controller.signal
+    });
+
+    if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+    return await response.json();
+  } finally {
+    clearTimeout(id);
+  }
+};
+
 export const GlobalDataProvider = ({ children }) => {
   const apiUrl = 'https://shiva-backend-g5i9.onrender.com';
   const { showAlert, AlertComponent } = useAlert();
@@ -13,25 +31,34 @@ export const GlobalDataProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  const MIN_LOADING_TIME = 1000; // Ensures spinner shows for at least 1s
+
   const fetchInitialData = useCallback(async () => {
+    const startTime = Date.now();
     try {
       setLoading(true);
       setError(null);
 
       const [brandRes, productsRes, feedbackRes] = await Promise.all([
-        fetch(`${apiUrl}/api/brand`).then(res => res.json()),
-        fetch(`${apiUrl}/api/products`).then(res => res.json()),
-        fetch(`${apiUrl}/api/feedback`).then(res => res.json()),
+        fetchWithTimeout(`${apiUrl}/api/brand`),
+        fetchWithTimeout(`${apiUrl}/api/products`),
+        fetchWithTimeout(`${apiUrl}/api/feedback`)
       ]);
 
       setBrand(brandRes);
       setProducts(productsRes);
       setFeedback(feedbackRes);
     } catch (err) {
-      showAlert("Failed to fetch", 'error');
+      if (err.name === 'AbortError') {
+        showAlert("Request timed out", 'error');
+      } else {
+        showAlert("Failed to fetch data", 'error');
+      }
       setError('Something went wrong while loading global data.');
     } finally {
-      setLoading(false);
+      const elapsed = Date.now() - startTime;
+      const delay = Math.max(0, MIN_LOADING_TIME - elapsed);
+      setTimeout(() => setLoading(false), delay);
     }
   }, [apiUrl, showAlert]);
 
@@ -41,13 +68,14 @@ export const GlobalDataProvider = ({ children }) => {
 
   return (
     <GlobalDataContext.Provider
-      value={{ brand, products, feedback, loading, error, refetch: fetchInitialData }}>
-      {
-        loading &&  <div className="loading-container">
-        <span className="loader"></span>
-        <p>Loading</p>
-      </div>
-      }
+      value={{ brand, products, feedback, loading, error, refetch: fetchInitialData }}
+    >
+      {loading && (
+        <div className="loading-container">
+          <span className="loader"></span>
+          <p>Loading...</p>
+        </div>
+      )}
       <AlertComponent />
       {children}
     </GlobalDataContext.Provider>
