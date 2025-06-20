@@ -22,7 +22,7 @@ const fetchWithTimeout = async (resource, options = {}, timeout = 15000) => {
 };
 
 export const GlobalDataProvider = ({ children }) => {
-  const apiUrl = 'http://localhost:5000';
+  const apiUrl = 'https://shiva-backend-g5i9.onrender.com';
   const { showAlert, AlertComponent } = useAlert();
 
   const [brand, setBrand] = useState(null);
