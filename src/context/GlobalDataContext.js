@@ -31,7 +31,7 @@ export const GlobalDataProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  const MIN_LOADING_TIME = 1000;
+  const MIN_LOADING_TIME = 2000;
 
   const fetchInitialData = useCallback(async () => {
     const startTime = Date.now();
