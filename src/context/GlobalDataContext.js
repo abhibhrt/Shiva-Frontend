@@ -31,7 +31,7 @@ export const GlobalDataProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  const MIN_LOADING_TIME = 1000; // Ensures spinner shows for at least 1s
+  const MIN_LOADING_TIME = 1000;
 
   const fetchInitialData = useCallback(async () => {
     const startTime = Date.now();
@@ -68,8 +68,7 @@ export const GlobalDataProvider = ({ children }) => {
 
   return (
     <GlobalDataContext.Provider
-      value={{ brand, products, feedback, loading, error, refetch: fetchInitialData }}
-    >
+      value={{ brand, products, feedback, loading, error, refetch: fetchInitialData }}>
       {loading && (
         <div className="loading-container">
           <span className="loader"></span>

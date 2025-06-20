@@ -77,8 +77,7 @@ const Home = () => {
           {/* Search Form */}
           <form
             className={`er-search-form ${showSearch ? 'visible' : ''}`}
-            onSubmit={handleSubmit}
-          >
+            onSubmit={handleSubmit} >
             <div className="er-form-header">
               <span role="img" aria-label="rickshaw" className='er-form-icon'>🛺</span>
               <h3>Customize Your Search</h3>

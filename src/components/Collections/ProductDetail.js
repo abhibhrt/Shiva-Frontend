@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { useGlobalData } from '../../context/GlobalDataContext';
 import './productDetail.css';
+import { useGlobalData } from '../../context/GlobalDataContext';
 
 const ProductDetail = () => {
   const { productId } = useParams();
-  const { products, loading } = useGlobalData();
+  const { products, brand, loading } = useGlobalData();
   const [product, setProduct] = useState(null);
   const [selectedImage, setSelectedImage] = useState(0);
   const [selectedColor, setSelectedColor] = useState('');
@@ -215,13 +215,13 @@ const ProductDetail = () => {
         <div className="product-contact-section">
           <h3>Contact for Purchase</h3>
           <div className="product-contact-methods">
-            <a href="tel:+919876543210" className="product-contact-button phone">
-              Call: +91 9876543210
+            <a href={`tel:+91${brand.brand.contact_info.mobile_number}`} title={brand.brand.contact_info.mobile_number} className="product-contact-button phone">
+              Call Us
             </a>
-            <a href="mailto:sales@example.com" className="product-contact-button email">
-              Email: sales@example.com
+            <a href={`mailto:${brand.brand.contact_info.email}`} title={brand.brand.contact_info.email} className="product-contact-button email">
+              Email Us
             </a>
-            <a href="https://wa.me/919876543210" className="product-contact-button whatsapp">
+            <a href={`https://wa.me/${brand.brand.contact_info.mobile_number}`} title={brand.brand.contact_info.mobile_number} className="product-contact-button whatsapp">
               WhatsApp
             </a>
           </div>

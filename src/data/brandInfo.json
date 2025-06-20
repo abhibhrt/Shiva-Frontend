@@ -1,23 +1,24 @@
 {
-    "success": true,
-    "brand": {
-      "contact_info": {
-        "mobile_number": "1234567890",
-        "email": "contact@shivaenterprises.com",
-        "address": "Default Address, City, State"
-      },
-      "social_media": {
-        "instagram": "",
-        "facebook": "",
-        "whatsapp": ""
-      },
-      "about": {
-        "description": "Welcome to Shiva Enterprises - Your trusted partner in business"
-      },
-      "_id": "68448d29e109574bf79e7867",
-      "brand_name": "Shiva Enterprises",
-      "createdAt": "2025-06-07T19:04:09.773Z",
-      "updatedAt": "2025-06-07T19:04:09.773Z",
-      "__v": 0
-    }
+  "success": true,
+  "brand": {
+    "contact_info": {
+      "mobile_number": "1234567890",
+      "email": "contact@shivaenterprises.com",
+      "address": "Default Address, City, State",
+      "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d967.3539980117299!2d85.37332886160154!3d26.100155559257853!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ed11fda384f865%3A0xf67e69317940cb55!2sShiva%20Enterprises%20E-RICKSHAW%20retailers!5e1!3m2!1sen!2sin!4v1749899239985!5m2!1sen!2sin"
+    },
+    "social_media": {
+      "instagram": "https://www.instagram.com/",
+      "facebook": "https://www.instagram.com/",
+      "whatsapp": "https://www.instagram.com/"
+    },
+    "about": {
+      "description": "Welcome to Shiva Enterprises - Your trusted partner in business"
+    },
+    "_id": "684d599221718ea01614a936",
+    "brand_name": "Shiva Enterprises",
+    "createdAt": "2025-06-14T11:14:26.141Z",
+    "updatedAt": "2025-06-20T19:29:55.335Z",
+    "__v": 0
   }
+}

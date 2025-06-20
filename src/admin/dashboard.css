@@ -1,0 +1,194 @@
+/* Login Page Styles */
+.admin-login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--bg-dark);
+  padding: 20px;
+  padding-top: 80px;
+}
+
+.admin-login-card {
+  width: 100%;
+  max-width: 400px;
+  padding: 30px;
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.admin-login-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.admin-login-title {
+  color: var(--brand-color);
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.admin-login-subtitle {
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+.admin-login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.admin-form-group {
+  margin-bottom: 15px;
+}
+
+.admin-form-label {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--text-light);
+  font-size: 14px;
+}
+
+.admin-form-input {
+  width: 93%;
+  padding: 12px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--secondary-color);
+  border-radius: 4px;
+  color: var(--text-light);
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.admin-form-input:focus {
+  outline: none;
+  border-color: var(--brand-color);
+  box-shadow: 0 0 0 2px rgba(0, 165, 157, 0.2);
+}
+
+.admin-form-options {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.admin-forgot-password {
+  color: var(--brand-color);
+  font-size: 13px;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.admin-forgot-password:hover {
+  color: var(--tertiary-color);
+}
+
+.admin-login-button {
+  padding: 12px;
+  background-color: var(--brand-color);
+  color: var(--text-light);
+  border: none;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.admin-login-button:hover {
+  background-color: var(--tertiary-color);
+}
+
+.admin-login-button:disabled {
+  background-color: var(--text-muted);
+  cursor: not-allowed;
+}
+
+/* Dashboard Styles */
+.admin-dashboard-container {
+  padding-top: 80px;
+  min-height: 100vh;
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+}
+
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid var(--card-border);
+}
+
+.admin-title {
+  font-size: 20px;
+  margin: 0;
+}
+
+.admin-logout-button {
+  padding: 8px 16px;
+  background-color: transparent;
+  color: var(--text-light);
+  border: 1px solid var(--text-light);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.admin-logout-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.admin-navigation {
+  display: flex;
+  padding: 20px;
+  gap: 10px;
+  background-color: var(--card-bg);
+  border-bottom: 1px solid var(--card-border);
+}
+
+.admin-nav-button {
+  padding: 10px 20px;
+  background-color: transparent;
+  color: var(--text-light);
+  border: 1px solid var(--card-border);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.admin-nav-button:hover {
+  background-color: rgba(0, 165, 157, 0.1);
+  border-color: var(--brand-color);
+}
+
+.admin-nav-button.active {
+  background-color: var(--brand-color);
+  border-color: var(--brand-color);
+}
+
+.admin-main-content {
+  padding: 20px;
+}
+
+.admin-section {
+  padding: 20px;
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 4px;
+}
+
+.admin-welcome-message {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.admin-welcome-message h2 {
+  color: var(--brand-color);
+  margin-bottom: 15px;
+}
+
+.admin-welcome-message p {
+  color: var(--text-muted);
+}
