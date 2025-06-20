@@ -130,11 +130,24 @@ const NewProductForm = () => {
         }
     };
 
-    const handleArrayChange = (field, value) => {
-        setFormData(prev => ({
-            ...prev,
-            [field]: value.split(',').map(item => item.trim())
-        }));
+    const handleArrayChange = (path, value) => {
+        const pathParts = path.split('.');
+
+        setFormData(prev => {
+            const newData = { ...prev };
+            let current = newData;
+
+            // Traverse the path except the last part
+            for (let i = 0; i < pathParts.length - 1; i++) {
+                current = current[pathParts[i]];
+            }
+
+            // Set the final value
+            const lastKey = pathParts[pathParts.length - 1];
+            current[lastKey] = value.split(',').map(item => item.trim());
+
+            return newData;
+        });
     };
 
     const handleColorAdd = () => {
@@ -153,14 +166,23 @@ const NewProductForm = () => {
             colorsAvailable: prev.colorsAvailable.filter(c => c !== color)
         }));
     };
+    const randomToken = 'Bearer faketoken1234567890'
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
             if (editingId) {
-                await axios.put(`${apiURL}/api/products/${editingId}`, formData);
+                await axios.put(`${apiURL}/api/products/${editingId}`, formData, {
+                    headers: {
+                        Authorization: randomToken
+                    }
+                });
             } else {
-                await axios.post(`${apiURL}/api/products`, formData);
+                await axios.post(`${apiURL}/api/products`, formData, {
+                    headers: {
+                        Authorization: randomToken
+                    }
+                });
             }
             resetForm();
             showAlert('Added Successfully', 'success');
@@ -420,7 +442,6 @@ const NewProductForm = () => {
                             <label className="newproduct-label">Battery Type (comma separated)</label>
                             <input
                                 type="text"
-                                name="battery.type"
                                 value={formData.battery.type.join(', ')}
                                 onChange={(e) => handleArrayChange('battery.type', e.target.value)}
                                 className="newproduct-input"
@@ -430,7 +451,6 @@ const NewProductForm = () => {
                             <label className="newproduct-label">Battery Rating (Ah, comma separated)</label>
                             <input
                                 type="text"
-                                name="battery.ratingAh"
                                 value={formData.battery.ratingAh.join(', ')}
                                 onChange={(e) => handleArrayChange('battery.ratingAh', e.target.value)}
                                 className="newproduct-input"

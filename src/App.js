@@ -9,6 +9,7 @@ import ProductDetail from './components/Collections/ProductDetail';
 import NewProductForm from './admin/newProduct';
 import { GlobalDataProvider } from './context/GlobalDataContext';
 import Contact from './components/Contact/Contact';
+import Login from './admin/Login';
 
 function App() {
 
@@ -42,6 +43,10 @@ function App() {
               <Route
                 path='/contact'
                 element={<Contact />}
+              />
+              <Route
+                path='/login'
+                element={<Login />}
               />
             </Routes>
           </main>

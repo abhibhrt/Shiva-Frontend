@@ -1,0 +1,163 @@
+:root {
+  --primary-color: #1e3c72;
+  --secondary-color: #2a5298;
+  --tertiary-color: #1e726a;
+  --quaternary-color: #2a5298;
+  --quinary-color: #1e3c72;
+  --senary-color: #2a5298;
+  --septenary-color: #1e3c72;
+  --octonary-color: #2a5298;
+  --nonary-color: #1e3c72;
+  --denary-color: #2a5298;
+  --brand-color: rgb(0, 165, 157);
+  --bg-dark: rgb(27, 27, 27);
+  --text-light: #ffffff;
+  --text-muted: #b0b0b0;
+  --card-bg: rgba(30, 60, 114, 0.2);
+  --card-border: rgba(42, 82, 152, 0.5);
+}
+
+.loginContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--bg-dark);
+  padding: 20px;
+}
+
+.loginCard {
+  background: var(--card-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--card-border);
+  border-radius: 10px;
+  padding: 40px;
+  width: 100%;
+  max-width: 450px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.loginHeader {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.loginTitle {
+  color: var(--text-light);
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.loginSubtitle {
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.formLabel {
+  color: var(--text-light);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.formInput {
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  color: var(--text-light);
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.formInput:focus {
+  outline: none;
+  border-color: var(--brand-color);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.formOptions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+}
+
+.rememberMe {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.checkbox {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--brand-color);
+}
+
+.rememberMeLabel {
+  color: var(--text-muted);
+  cursor: pointer;
+}
+
+.forgotPassword {
+  color: var(--brand-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.forgotPassword:hover {
+  color: #00d9d0;
+}
+
+.loginButton {
+  padding: 12px;
+  background: var(--brand-color);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.loginButton:hover {
+  background: #00d9d0;
+  transform: translateY(-2px);
+}
+
+.loginButton:disabled {
+  background: #007a75;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.signupLink {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+.signupAnchor {
+  color: var(--brand-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.signupAnchor:hover {
+  color: #00d9d0;
+}
